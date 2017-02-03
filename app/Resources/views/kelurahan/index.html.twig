@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Kelurahans list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Lurah</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for kelurahan in kelurahans %}
+            <tr>
+                <td><a href="{{ path('kelurahan_show', { 'id': kelurahan.id }) }}">{{ kelurahan.id }}</a></td>
+                <td>{{ kelurahan.name }}</td>
+                <td>{{ kelurahan.lurah }}</td>
+                <td>{{ kelurahan.phone }}</td>
+                <td>{{ kelurahan.address }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('kelurahan_show', { 'id': kelurahan.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('kelurahan_edit', { 'id': kelurahan.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('kelurahan_new') }}">Create a new kelurahan</a>
+        </li>
+    </ul>
+{% endblock %}

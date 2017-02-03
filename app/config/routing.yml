@@ -1,0 +1,8 @@
+rubah_api_kelurahan:
+    resource: "@RubahApiKelurahanBundle/Controller/"
+    type:     annotation
+    prefix:   /rubahapi/
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
